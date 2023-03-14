@@ -1,0 +1,18 @@
+Ship
+{
+    //private
+    id_,
+    name_,
+    speed_,
+    maxCrew_,
+    capacity_
+}
+
+gettery
+
+2) const-ry
+    a. bez argumentow (id = -1)
+    b. wszystkie
+    c. id, speed, maxCrew -> wykorzystaj drugi konstruktor przy pisaniu trzeciego
+
+set Name(const std::string &) <- ustawienie nazwy statku
