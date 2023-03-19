@@ -1,0 +1,39 @@
+Ship
+{
+    //private
+    id_,
+    name_,
+    speed_,
+    maxCrew_,
+    capacity_
+}
+
+gettery
+
+2) const-ry
+    a. bez argumentow (id = -1)
+    b. wszystkie
+    c. id, speed, maxCrew -> wykorzystaj drugi konstruktor przy pisaniu trzeciego
+
+set Name(const std::string &) <- ustawienie nazwy statku
+
+
+
+Kolejne zadanie:
+Zadanie 3
+Dodaj do klasy Ship:
+
+zmienną size_t crew_ określającą aktualną liczbę załogi na statku
+Ship& operator+=(const int), który dodawać będzie załogę do statku
+Ship& operator-=(const int), który będzie ją odejmował.
+Zadanie 4
+Utwórz klasę Cargo. Ma ona reprezentować 1 typ towaru na statku. Będzie ona posiadać 3 pola:
+
+name_ - nazwa towaru
+amount_ - ilość towaru
+basePrice_ - bazowa cena towaru
+Następnie napisz w klasie Cargo:
+
+Cargo& operator+=(const size_t), który będzie dodawać podaną ilość towaru
+Cargo& operator-=(const size_t), który będzie odejmował podaną ilość towaru
+Zastanów się także, jak będziesz przechowywać towary na statku.
