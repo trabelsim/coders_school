@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Ship.h"
+#include "Ship/Ship.h"
+#include "Cargo/Cargo.h"
 
-void printShipStats(Ship shipObj);
 
 int main()
 {
@@ -9,24 +9,34 @@ int main()
 
     Ship shipObj;
     shipObj.setName("Pierwszy statek");
-    printShipStats(shipObj);
+    shipObj.printShipStats();
 
     Ship shipObj2 = Ship(1, 100, 150);
-    printShipStats(shipObj2);
+    shipObj2.printShipStats();
 
     Ship shipObj3 = Ship(2, "ShipThree", 100, 150, 2000);
-    printShipStats(shipObj3);
+    shipObj3.printShipStats();
+
+    shipObj3 += 150;
+    shipObj3 -= 8;
+    shipObj3 += 100;
+
+    shipObj3.printShipStats();
+
+    Cargo gold = Cargo("Gold",130, 11.500);
+    Cargo silver = Cargo("Silver", 200, 8.500);
+    Cargo chickens = Cargo("Chickens", 1850, 10);
+
+    gold += 20;
+
+    chickens -= 1000;
+
+    shipObj3.addCargo(gold);
+    shipObj3.addCargo(silver);
+    shipObj3.addCargo(chickens);
+
+
+    shipObj3.printCargosStats();
 
     return 0;
-}
-
-void printShipStats(Ship shipObj)
-{
-    std::cout << "Ship ID:" << shipObj.getId() << std::endl;
-    std::cout << "Ship name:" << shipObj.getName() << std::endl;
-    std::cout << "Ship speed:" << shipObj.getSpeed() << std::endl;
-    std::cout << "Ship crew:" << shipObj.getMaxCrew() << std::endl;
-    std::cout << "Ship capacity:" << shipObj.getCapacity() << std::endl;
-    std::cout << std::endl;
-
 }
